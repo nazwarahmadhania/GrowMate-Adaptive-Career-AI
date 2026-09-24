@@ -881,9 +881,6 @@ Special thanks to the organizers, mentors, and the communities supporting the de
 
 ### Nazwa Rahmadhania
 
-Bachelor of Information Systems  
-Universitas Bina Sarana Informatika  
-
 * GitHub: [https://github.com/nazwarahmadhania](https://github.com/nazwarahmadhania)
 * LinkedIn: [https://www.linkedin.com/in/nazwa-rahmadhania](https://www.linkedin.com/in/nazwa-rahmadhania)
 
