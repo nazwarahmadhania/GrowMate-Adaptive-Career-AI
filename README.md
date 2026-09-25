@@ -759,7 +759,7 @@ Screenshots can be added here to demonstrate the working prototype.
 *Add screenshot here.*
 
 ```text
-![Langflow Workflow](Screenshot 2026-09-25 142223.png)
+![Langflow Workflow](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/9e8ba2935b567ca6e9e8e34d689a8a76768dd8c7/Screenshot%202026-09-25%20142223.png)
 ```
 
 ### Personalized Learning Roadmap
