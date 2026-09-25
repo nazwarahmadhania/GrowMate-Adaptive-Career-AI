@@ -777,11 +777,11 @@ GrowMate dynamically updates the learning roadmap when users’ skills, prioriti
 
 GrowMate can store and manage the personalized learning roadmap in Notion, allowing users to access and organize their learning plan in one place.
 
-![Notion Integration](screenshots/notion.png)
+![Notion Integration](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/0b89ef39023f004bc3714406314731955cf22b2a/Screenshot%202026-09-26%20045520.png)
 
 ### Google Calendar Integration
 
-...
+GrowMate can turn learning sessions from the roadmap into scheduled Google Calendar events, including learning tasks and resources.
 
 ![Google Calendar Integration](screenshots/google-calendar.png)
 
