@@ -783,11 +783,11 @@ GrowMate can store and manage the personalized learning roadmap in Notion, allow
 
 GrowMate can turn learning sessions from the roadmap into scheduled Google Calendar events, including learning tasks and resources.
 
-![Google Calendar Integration](screenshots/google-calendar.png)
+![Google Calendar Integration](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/6e385c97b6f7dcfcc3d5842a35c98f6a54d441ff/Screenshot%202026-09-26%20045938.png)
 
 ### Roadmap Report
 
-...
+GrowMate can generate the personalized learning roadmap as an HTML report for a structured and readable overview.
 
 ![Roadmap Report](screenshots/roadmap-report.png)
 ---
