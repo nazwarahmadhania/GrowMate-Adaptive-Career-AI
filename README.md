@@ -769,10 +769,11 @@ GrowMate monitors learning progress by tracking completed tasks, current session
 
 ### Adaptive Replanning
 
-*Add screenshot here.*
+GrowMate dynamically updates the learning roadmap when users’ skills, priorities, or learning capacity change.
 
-```text
-![Adaptive Replanning](screenshots/adaptive-replanning.png)
+![Adaptive Replanning](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/29a04f07b354cfb642139f5676eab32ea28ef9f4/Screenshot%202026-09-26%20043456.png)
+
+### Notion Integration
 ```
 
 ![Notion Integration](screenshots/notion.png)
