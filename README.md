@@ -748,13 +748,15 @@ Screenshots can be added here to demonstrate the working prototype.
 
 ### IBM Bob Interface
 
-*Add screenshot here.*
+IBM Bob serves as GrowMate’s main interface, where users interact with an agent to provide their profile and receive a personalized learning roadmap.
 
-```text
-![IBM Bob Interface](screenshots/ibm-bob.png)
-```
+*Example of GrowMate’s initial interaction with a user.*
+
+![IBM Bob Interface](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/88ad25d4ff1a6105ee8ef0c0955da8a2d18a010c/Screenshot%202026-09-26%20023701.png)
 
 ### Langflow Workflow
+
+GrowMate uses Langflow as a workflow and processing engine that connects IBM Bob with various supporting tools and services, such as Web Search, Notion, and Google Calendar. This workflow processes user input and generates responses through the Agent in an integrated manner.
 
 ![Langflow Workflow](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/9e8ba2935b567ca6e9e8e34d689a8a76768dd8c7/Screenshot%202026-09-25%20142223.png)
 
