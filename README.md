@@ -767,7 +767,7 @@ Screenshots can be added here to demonstrate the working prototype.
 *Add screenshot here.*
 
 ```text
-![Personalized Roadmap](screenshots/personalized-roadmap.png)
+![Personalized Roadmap]screenshots/personalized-roadmap.png
 ```
 
 ### Progress Monitoring
