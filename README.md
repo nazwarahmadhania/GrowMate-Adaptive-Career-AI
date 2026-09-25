@@ -759,15 +759,13 @@ IBM Bob serves as GrowMate’s main interface, where users interact with the age
 ![IBM Bob Interface](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/d47b9764b9fac580b340a1320f754e24dfd92edb/Screenshot%202026-09-26%20023701.png)
 
 ![Personalized Learning Roadmap](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/b6a38d5de6746044d79f584b5f0dd8d9f5f328e1/Screenshot%202026-09-26%20040026.png)
-```
 
 ### Progress Monitoring
 
-*Add screenshot here.*
+GrowMate monitors learning progress by tracking completed tasks, current sessions, and the next learning focus.
 
-```text
-![Progress Monitoring](screenshots/progress-monitoring.png)
-```
+![Progress Monitoring](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/60af542dee1b5bfe6bcbb00d2184ea431f654f5d/Screenshot%202026-09-26%20040644.png)
+
 
 ### Adaptive Replanning
 
