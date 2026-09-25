@@ -1,0 +1,517 @@
+
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Data Analyst Roadmap — Ferrari F1 Edition</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #0d0d0d;
+    padding: 32px 16px;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  .header {
+    background: #CC0000;
+    border-radius: 10px 10px 0 0;
+    padding: 28px 28px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 220px; height: 100%;
+    background: repeating-linear-gradient(
+      -55deg,
+      transparent 0px,
+      transparent 10px,
+      rgba(255,255,255,0.05) 10px,
+      rgba(255,255,255,0.05) 20px
+    );
+  }
+  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .shield {
+    width: 44px; height: 44px;
+    background: #FFD700;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .header h1 em { color: #FFD700; font-style: normal; }
+  .header p { color: rgba(255,255,255,0.75); font-size: 12px; }
+
+  .flag-strip {
+    height: 7px;
+    background: repeating-linear-gradient(90deg, #fff 0px, #fff 14px, #000 14px, #000 28px);
+    margin-bottom: 0;
+  }
+
+  .profile-bar {
+    background: #1a1a1a;
+    border: 1px solid #CC0000;
+    border-top: none;
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 16px;
+    border-radius: 0 0 8px 8px;
+  }
+  .profile-item .plabel {
+    font-size: 10px;
+    color: #CC0000;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .profile-item .pvalue {
+    font-size: 13px;
+    color: #f0f0f0;
+    font-weight: 600;
+  }
+
+  .cri-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-left: 4px solid #CC0000;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .cri-number {
+    font-size: 42px;
+    font-weight: 900;
+    color: #CC0000;
+    line-height: 1;
+    white-space: nowrap;
+    letter-spacing: -1px;
+  }
+  .cri-right { flex: 1; }
+  .cri-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+  }
+  .cri-bar-bg {
+    background: #333;
+    border-radius: 3px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .cri-bar-fill {
+    height: 100%;
+    width: 55%;
+    background: #CC0000;
+    border-radius: 3px;
+  }
+  .cri-note { font-size: 12px; color: #888; }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFD700;
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #2a2a2a;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 12px; }
+  th {
+    background: #CC0000;
+    color: #fff;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #d0d0d0;
+    background: #1a1a1a;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #141414; }
+  .ok { color: #4caf50; font-weight: 700; }
+  .warn { color: #FFD700; font-weight: 700; }
+
+  .week-card {
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    background: #141414;
+  }
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #1e1e1e;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .lap-badge {
+    background: #CC0000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .lap-badge.lap2 { background: #aa0000; }
+  .lap-badge.lap3 { background: #880000; }
+  .lap-badge.lap4 { background: #FFD700; color: #000; }
+  .week-title { font-size: 13px; font-weight: 700; color: #f0f0f0; flex: 1; }
+  .week-meta { font-size: 11px; color: #888; white-space: nowrap; }
+  .pri-high {
+    background: rgba(204,0,0,0.15);
+    color: #ff6666;
+    border: 1px solid rgba(204,0,0,0.4);
+    border-radius: 3px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+  }
+  .pri-finish {
+    background: rgba(255,215,0,0.15);
+    color: #FFD700;
+    border: 1px solid rgba(255,215,0,0.4);
+    border-radius: 3px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+  }
+  .week-body { padding: 12px 16px; }
+  .obj {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #1a1a1a;
+    border-left: 3px solid #CC0000;
+    border-radius: 0 4px 4px 0;
+  }
+  .todo-list { list-style: none; padding: 0; margin: 0 0 10px 0; }
+  .todo-list li {
+    font-size: 13px;
+    padding: 5px 0 5px 22px;
+    position: relative;
+    color: #e0e0e0;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .todo-list li:last-child { border-bottom: none; }
+  .todo-list li::before {
+    content: "▷";
+    position: absolute;
+    left: 0;
+    color: #CC0000;
+    font-size: 11px;
+    top: 6px;
+  }
+  .resource-row {
+    font-size: 11px;
+    color: #666;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #2a2a2a;
+  }
+  .resource-row a { color: #CC0000; text-decoration: none; }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .cal-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-top: 3px solid #CC0000;
+    border-radius: 6px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .cal-card.final { border-top-color: #FFD700; }
+  .cal-week {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #CC0000;
+    margin-bottom: 4px;
+  }
+  .cal-card.final .cal-week { color: #FFD700; }
+  .cal-dates { font-size: 11px; color: #888; margin-bottom: 6px; line-height: 1.6; }
+  .cal-topic { font-size: 11px; font-weight: 700; color: #f0f0f0; }
+  .cal-hours { font-size: 10px; color: #555; margin-top: 3px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid #2a2a2a;
+    font-size: 12px;
+    color: #444;
+  }
+  .footer strong { color: #CC0000; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  
+  <div class="header">
+    <div class="header-top">
+      <div class="shield">🏎</div>
+      <div>
+        <h1>DATA ANALYST <em>ROADMAP</em></h1>
+        <p>Ferrari F1 Edition  ·  GrowMate x IBM Bob  ·  Target: 1 Bulan</p>
+      </div>
+    </div>
+  </div>
+  <div class="flag-strip"></div>
+
+  
+  <div class="profile-bar">
+    <div class="profile-item">
+      <div class="plabel">Driver</div>
+      <div class="pvalue">S1 Sistem Informasi</div>
+    </div>
+    <div class="profile-item">
+      <div class="plabel">Team</div>
+      <div class="pvalue">Novo Club &amp; HIMSI</div>
+    </div>
+    <div class="profile-item">
+      <div class="plabel">Target Posisi</div>
+      <div class="pvalue">Data Analyst</div>
+    </div>
+    <div class="profile-item">
+      <div class="plabel">Race Duration</div>
+      <div class="pvalue">1 Bulan · 24 Jam</div>
+    </div>
+    <div class="profile-item">
+      <div class="plabel">Pit Strategy</div>
+      <div class="pvalue">3 sesi/minggu x 2 jam</div>
+    </div>
+  </div>
+
+  
+  <div class="cri-card">
+    <div class="cri-number">55%</div>
+    <div class="cri-right">
+      <div class="cri-title">⚡ Career Readiness Indicator (CRI)</div>
+      <div class="cri-bar-bg"><div class="cri-bar-fill"></div></div>
+      <div class="cri-note">Mesin sudah menyala. SQL &amp; Python sudah ada, sertifikasi Google DA &amp; IBM AI Agent jadi bahan bakar tambahan. Tinggal push throttle penuh ke Pandas, Visualisasi, dan EDA!</div>
+    </div>
+  </div>
+
+  
+  <div class="section-title">🏁 Skill Gap Analysis</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Prioritas</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:#f0f0f0">SQL</strong></td>
+        <td>HIGH</td>
+        <td><span class="ok">✓ Ada</span></td>
+        <td>Perdalam JOIN, Window Functions, Aggregation</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#f0f0f0">Python (Pandas/NumPy)</strong></td>
+        <td>HIGH</td>
+        <td><span class="ok">✓ Ada</span></td>
+        <td>Sesuaikan ke library Data Analysis</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#f0f0f0">Data Visualization</strong></td>
+        <td>HIGH</td>
+        <td><span class="warn">⚠ Perlu</span></td>
+        <td>Praktik Tableau / Power BI dashboard</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#f0f0f0">Data Cleaning &amp; EDA</strong></td>
+        <td>HIGH</td>
+        <td><span class="warn">⚠ Perlu</span></td>
+        <td>Pelajari alur cleaning → analisis → insight</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#f0f0f0">Business Acumen &amp; Storytelling</strong></td>
+        <td>MEDIUM</td>
+        <td><span class="warn">⚠ Perlu</span></td>
+        <td>Latih narasi insight dari data</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#f0f0f0">Statistical Analysis</strong></td>
+        <td>MEDIUM</td>
+        <td><span class="warn">⚠ Perlu</span></td>
+        <td>Statistik deskriptif &amp; inferensial dasar</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  <div class="section-title">🏎 Race Strategy — Personalized Learning Roadmap</div>
+
+  
+  <div class="week-card">
+    <div class="week-header">
+      <span class="lap-badge">LAP 1</span>
+      <span class="week-title">SQL Lanjutan &amp; Query Optimization</span>
+      <span class="week-meta">6 jam<span class="pri-high">HIGH</span></span>
+    </div>
+    <div class="week-body">
+      <div class="obj">🏁 Kuasai teknik query lanjutan untuk menarik dan mengolah data dari database layaknya seorang Data Analyst profesional.</div>
+      <ul class="todo-list">
+        <li>Review dasar SQL — SELECT, WHERE, GROUP BY, ORDER BY</li>
+        <li>Pelajari &amp; praktikkan semua tipe JOIN (Inner, Left, Right, Full Outer)</li>
+        <li>Pelajari Aggregations lanjutan &amp; klausa HAVING</li>
+        <li>Pelajari Window Functions: ROW_NUMBER(), RANK(), SUM() OVER()</li>
+        <li>Kerjakan minimal 5 soal latihan SQL di LeetCode / HackerRank</li>
+      </ul>
+      <div class="resource-row">📚 <a href="https://mode.com/sql-tutorial/">Mode Analytics SQL Tutorial</a>  ·  <a href="https://www.hackerrank.com/domains/sql">HackerRank SQL</a>  ·  <a href="https://sqlzoo.net/">SQLZoo</a></div>
+    </div>
+  </div>
+
+  
+  <div class="week-card">
+    <div class="week-header">
+      <span class="lap-badge lap2">LAP 2</span>
+      <span class="week-title">Data Visualization &amp; BI Dashboard</span>
+      <span class="week-meta">6 jam<span class="pri-high">HIGH</span></span>
+    </div>
+    <div class="week-body">
+      <div class="obj">🏁 Ubah data mentah menjadi dashboard visual interaktif yang bisa berbicara kepada stakeholder bisnis.</div>
+      <ul class="todo-list">
+        <li>Pahami prinsip desain visual &amp; pemilihan jenis chart yang tepat</li>
+        <li>Koneksikan dataset CSV ke Tableau Public atau Power BI</li>
+        <li>Buat calculated fields / measures sederhana</li>
+        <li>Susun layout dashboard interaktif (filter &amp; parameter)</li>
+        <li>Rangkum minimal 3 insight bisnis dari dashboard yang dibuat</li>
+      </ul>
+      <div class="resource-row">📚 <a href="https://www.tableau.com/learn/training">Tableau Free Training</a>  ·  <a href="https://learn.microsoft.com/en-us/training/paths/create-use-analytics-reports-power-bi/">Microsoft Learn Power BI</a></div>
+    </div>
+  </div>
+
+  
+  <div class="week-card">
+    <div class="week-header">
+      <span class="lap-badge lap3">LAP 3</span>
+      <span class="week-title">EDA dengan Python (Pandas, NumPy, Seaborn)</span>
+      <span class="week-meta">6 jam<span class="pri-high">HIGH</span></span>
+    </div>
+    <div class="week-body">
+      <div class="obj">🏁 Gunakan Python untuk data cleaning dan Exploratory Data Analysis — skill inti yang mengisi 70% pekerjaan harian Data Analyst.</div>
+      <ul class="todo-list">
+        <li>Review Python dasar yang sudah dimiliki (list, dict, fungsi)</li>
+        <li>Pelajari Pandas: read_csv, groupby, merge, handling missing values</li>
+        <li>Pelajari NumPy: array operations &amp; statistik dasar (mean, median, std)</li>
+        <li>Buat visualisasi dengan Matplotlib &amp; Seaborn (histogram, boxplot, heatmap)</li>
+        <li>Tulis EDA report singkat berisi statistical summary &amp; key insight</li>
+      </ul>
+      <div class="resource-row">📚 <a href="https://www.kaggle.com/learn">Kaggle Learn — Pandas &amp; Python</a>  ·  <a href="https://realpython.com/tutorials/data-science/">Real Python Data Analysis</a></div>
+    </div>
+  </div>
+
+  
+  <div class="week-card">
+    <div class="week-header">
+      <span class="lap-badge lap4">🏆 LAP 4</span>
+      <span class="week-title">Mini Project Portofolio + Interview Prep</span>
+      <span class="week-meta">6 jam<span class="pri-finish">FINISH LINE</span></span>
+    </div>
+    <div class="week-body">
+      <div class="obj">🏁 Gabungkan semua skill ke dalam 1 project end-to-end siap CV &amp; GitHub, lalu latih komunikasi teknis untuk memenangkan interview!</div>
+      <ul class="todo-list">
+        <li>Pilih dataset publik dari Kaggle / Google Dataset Search</li>
+        <li>Jalankan pipeline lengkap: cleaning → EDA → SQL query → visualisasi</li>
+        <li>Tulis README: business problem, proses analisis, insight &amp; rekomendasi</li>
+        <li>Upload &amp; rapikan dokumentasi project ke GitHub / portofolio pribadi</li>
+        <li>Latihan jelaskan project dengan teknik STAR method untuk interview</li>
+      </ul>
+      <div class="resource-row">📚 <a href="https://www.kaggle.com/datasets">Kaggle Datasets</a>  ·  <a href="https://mavenanalytics.io/">Maven Analytics Portfolio</a>  ·  <a href="https://github.com/">GitHub</a></div>
+    </div>
+  </div>
+
+  
+  <div class="section-title">📅 Race Calendar (Mulai 21 Juli 2025)</div>
+  <div class="calendar-grid">
+    <div class="cal-card">
+      <div class="cal-week">LAP 1</div>
+      <div class="cal-dates">Sen 21 Jul<br />Rab 23 Jul<br />Jum 25 Jul</div>
+      <div class="cal-topic">SQL Lanjutan</div>
+      <div class="cal-hours">3 sesi × 2 jam</div>
+    </div>
+    <div class="cal-card">
+      <div class="cal-week">LAP 2</div>
+      <div class="cal-dates">Sen 28 Jul<br />Rab 30 Jul<br />Jum 1 Agt</div>
+      <div class="cal-topic">Data Visualization</div>
+      <div class="cal-hours">3 sesi × 2 jam</div>
+    </div>
+    <div class="cal-card">
+      <div class="cal-week">LAP 3</div>
+      <div class="cal-dates">Sen 4 Agt<br />Rab 6 Agt<br />Jum 8 Agt</div>
+      <div class="cal-topic">EDA + Python</div>
+      <div class="cal-hours">3 sesi × 2 jam</div>
+    </div>
+    <div class="cal-card final">
+      <div class="cal-week">LAP 4</div>
+      <div class="cal-dates">Sen 11 Agt<br />Rab 13 Agt<br />Jum 15 Agt</div>
+      <div class="cal-topic">Mini Project + Interview</div>
+      <div class="cal-hours">3 sesi × 2 jam</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>FORZA FERRARI</strong>  ·  Made with IBM Bob
+  </div>
+
+</div>
+</body>
+</html>
