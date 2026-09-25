@@ -756,7 +756,7 @@ GrowMate uses Langflow as a workflow and processing engine that connects IBM Bob
 
 IBM Bob serves as GrowMate’s main interface, where users interact with the agent throughout the roadmap generation process, from providing their profile to receiving a personalized learning roadmap.
 
-![IBM Bob Interface](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/d47b9764b9fac580b340a1320f754e24dfd92edb/Screenshot%202026-09-26%20023701.png)
+![IBM Bob Interface](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/efa8a9e52edd3cd1cf33221a896b2395530c3077/Screenshot%202026-09-26%20044013.png)
 
 ![Personalized Learning Roadmap](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/b6a38d5de6746044d79f584b5f0dd8d9f5f328e1/Screenshot%202026-09-26%20040026.png)
 
@@ -774,7 +774,8 @@ GrowMate dynamically updates the learning roadmap when users’ skills, prioriti
 ![Adaptive Replanning](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/29a04f07b354cfb642139f5676eab32ea28ef9f4/Screenshot%202026-09-26%20043456.png)
 
 ### Notion Integration
-```
+
+GrowMate can store and manage the personalized learning roadmap in Notion, allowing users to access and organize their learning plan in one place.
 
 ![Notion Integration](screenshots/notion.png)
 
