@@ -759,7 +759,7 @@ Screenshots can be added here to demonstrate the working prototype.
 *Add screenshot here.*
 
 ```text
-![Langflow Workflow](screenshots/langflow-workflow.png)
+![Langflow Workflow](Screenshot 2026-09-25 142223.png)
 ```
 
 ### Personalized Learning Roadmap
