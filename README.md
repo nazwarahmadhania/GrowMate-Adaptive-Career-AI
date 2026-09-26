@@ -82,7 +82,7 @@ Roadmap Report (Optional)
 Progress Monitoring
       ↓
 Adaptive Replanning
-```
+````
 
 This allows GrowMate to move beyond static recommendations and provide a learning plan that can evolve together with the user's progress and changing circumstances.
 
@@ -587,22 +587,22 @@ GrowMate should be validated using scenario-based testing covering the complete 
 
 ### Core Scenarios
 
-| Scenario                       | Expected Behavior                               |
-| ------------------------------ | ----------------------------------------------- |
-| New user creates a roadmap     | Profile → career research → skill gap → roadmap |
-| Missing skill information      | Remains unknown instead of becoming 0%          |
-| Insufficient data for CRI      | CRI is not fabricated                           |
-| User selects Notion            | Notion action occurs only after user approval   |
-| User selects Calendar          | Calendar action occurs only after user approval |
-| User selects Calendar + Notion | Both selected destinations are processed        |
+| Scenario                        | Expected Behavior                               |
+| ------------------------------- | ----------------------------------------------- |
+| New user creates a roadmap      | Profile → career research → skill gap → roadmap |
+| Missing skill information       | Remains unknown instead of becoming 0%          |
+| Insufficient data for CRI       | CRI is not fabricated                           |
+| User selects Notion             | Notion action occurs only after user approval   |
+| User selects Calendar           | Calendar action occurs only after user approval |
+| User selects Calendar + Notion  | Both selected destinations are processed        |
 | User selects "Not Now" / "Skip" | No external action is performed                 |
-| User reports completed session | Session status becomes Completed                |
-| User reports active session    | Session status becomes In Progress              |
-| Calendar event exists          | Does not automatically mark task Completed      |
-| Learning time changes          | Affected roadmap is reconsidered                |
-| Target career changes          | Relevant analysis and roadmap are updated       |
-| Roadmap Report = No            | No HTML report is generated                     |
-| Roadmap Report = Yes           | Report uses Canonical Roadmap Data              |
+| User reports completed session  | Session status becomes Completed                |
+| User reports active session     | Session status becomes In Progress              |
+| Calendar event exists           | Does not automatically mark task Completed      |
+| Learning time changes           | Affected roadmap is reconsidered                |
+| Target career changes           | Relevant analysis and roadmap are updated       |
+| Roadmap Report = No             | No HTML report is generated                     |
+| Roadmap Report = Yes            | Report uses Canonical Roadmap Data              |
 
 The validation process focuses on:
 
@@ -639,14 +639,28 @@ The validation process focuses on:
 ```text
 GrowMate-Adaptive-Career-AI/
 │
-├── GrowMate – Adaptive Career AI.json
-│   └── Main Langflow workflow export
+├── README.md
+│   └── Project documentation
 │
 ├── mcp.json
 │   └── IBM Bob MCP configuration
 │
-└── README.md
-    └── Project documentation
+├── GrowMate – Adaptive Career AI.json
+│   └── Main Langflow workflow export
+│
+├── skills/
+│   └── skill.md
+│       └── IBM Bob skill/instruction file
+│
+├── reports/
+│   ├── Roadmap Report.html
+│   │   └── Personalized roadmap HTML report
+│   │
+│   └── user-testing-report.html
+│       └── User testing report
+│
+└── Images/
+    └── Prototype screenshots
 ```
 
 ---
@@ -702,7 +716,17 @@ to configure the required MCP connection between IBM Bob and the GrowMate workfl
 
 IBM Bob acts as the primary user-facing interface.
 
-## 5. Configure Optional Integrations
+## 5. Configure IBM Bob Skills
+
+The repository includes:
+
+```text
+skills/skill.md
+```
+
+This file contains the GrowMate skill/instruction configuration used for the IBM Bob setup.
+
+## 6. Configure Optional Integrations
 
 If required, configure:
 
@@ -711,7 +735,7 @@ If required, configure:
 
 These integrations are optional and depend on the user's authorization and available credentials.
 
-## 6. Run GrowMate
+## 7. Run GrowMate
 
 Start the Langflow workflow and access GrowMate through the configured IBM Bob interface.
 
@@ -802,23 +826,13 @@ GrowMate can turn learning sessions from the roadmap into scheduled Google Calen
 GrowMate can generate the personalized learning roadmap as an HTML report for a structured and readable overview.
 ```
 
-[View Roadmap Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/Roadmap%20Report.html)
-
----
+[View Roadmap Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/reports/Roadmap%20Report.html)
 
 # 🧪 User Testing
 
-GrowMate was tested with users using different career goals and learning profiles.
+GrowMate was tested using scenario-based user testing to evaluate the core workflow, roadmap generation, progress monitoring, adaptive replanning, and external integrations.
 
-The testing was conducted to observe how GrowMate generates personalized learning roadmaps based on user-provided profiles, career targets, existing skills, learning capacity, and learning timelines.
-
-### User Testing Report
-
-[View User Testing Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/user-testing-report.html)
-
-The user testing results are presented as initial prototype testing and are not intended to represent large-scale validation of the system.
-
----
+[View User Testing Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/reports/user-testing-report.html)
 
 # ⚠️ Current Limitations
 
@@ -880,7 +894,7 @@ The project addresses career-readiness and learning-planning challenges by combi
 | **Responsible AI**                       | Includes approval checkpoints, data consistency rules, no fabricated mastery, and safeguards against unsupported claims |
 | **Scalability**                          | Designed to support additional career domains, resources, integrations, and institutional use cases                     |
 
-The hackathon's judging criteria include problem clarity and relevance, innovation/feasibility/monetization, user impact, technical execution and prototype functionality, and responsible AI. 
+The hackathon's judging criteria include problem clarity and relevance, innovation/feasibility/monetization, user impact, technical execution and prototype functionality, and responsible AI.
 
 ---
 
@@ -893,6 +907,7 @@ The hackathon's judging criteria include problem clarity and relevance, innovati
 **Core Technologies:** IBM Bob, Langflow, Google Generative AI, MCP
 
 **Repository:**
+
 [https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI)
 
 **Project Type:** AI-powered career readiness and personalized learning roadmap assistant
