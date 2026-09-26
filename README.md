@@ -795,7 +795,7 @@ GrowMate can turn learning sessions from the roadmap into scheduled Google Calen
 ```text
 GrowMate can generate the personalized learning roadmap as an HTML report for a structured and readable overview.
 ```
-![Roadmap Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/
+[View Roadmap Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/
 )
 
 # ⚠️ Current Limitations
