@@ -1,0 +1,827 @@
+
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎓 Graduation Day — Roadmap Skripsi</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #fffdf5;
+    color: #1a2e3b;
+  }
+  .page { max-width: 760px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2a5298 100%);
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 32px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: "🎓";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    opacity: 0.15;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #c9a84c;
+    color: #1a2e3b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .meta-chip {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  /* PROFILE CARD */
+  .card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #57606a;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .profile-item { display: flex; flex-direction: column; gap: 2px; }
+  .profile-label { font-size: 11px; color: #57606a; text-transform: uppercase; letter-spacing: 0.5px; }
+  .profile-value { font-size: 13px; font-weight: 600; color: #1a2e3b; }
+
+  /* CRI */
+  .cri-bar-wrap { margin-top: 14px; }
+  .cri-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+  .cri-bar { height: 10px; background: #e5e7eb; border-radius: 99px; overflow: hidden; }
+  .cri-fill { height: 100%; background: linear-gradient(90deg, #c9a84c, #f0c040); border-radius: 99px; width: 37.5%; }
+  .cri-note { font-size: 11px; color: #57606a; margin-top: 6px; }
+
+  /* TIMELINE OVERVIEW */
+  .timeline-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .fase-chip {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .fase-chip .fase-num {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #57606a;
+    margin-bottom: 4px;
+  }
+  .fase-chip .fase-date {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-bottom: 2px;
+  }
+  .fase-chip .fase-desc {
+    font-size: 11px;
+    color: #57606a;
+    line-height: 1.4;
+  }
+  .fase-chip.f1 { border-left: 3px solid #3b82d4; }
+  .fase-chip.f2 { border-left: 3px solid #f59e0b; }
+  .fase-chip.f3 { border-left: 3px solid #eab308; }
+  .fase-chip.f4 { border-left: 3px solid #22c55e; }
+  .fase-chip.f5 { border-left: 3px solid #8b5cf6; }
+  .fase-chip.f6 { border-left: 3px solid #c9a84c; }
+
+  /* SECTION HEADING */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 0 14px;
+  }
+  .section-heading .dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .section-heading h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2e3b;
+  }
+  .section-heading .period {
+    font-size: 11px;
+    color: #57606a;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  /* LANGKAH CARD */
+  .langkah {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .langkah-header {
+    padding: 14px 16px 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .langkah-num {
+    background: #1a3a5c;
+    color: #c9a84c;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .langkah-num.finish { background: #c9a84c; color: #1a2e3b; }
+  .langkah-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2e3b;
+    flex: 1;
+  }
+  .badge-priority {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .badge-high { background: #fee2e2; color: #b91c1c; }
+  .badge-medium { background: #fef3c7; color: #92400e; }
+  .langkah-meta {
+    display: flex;
+    gap: 12px;
+    padding: 0 16px 8px 16px;
+    margin-left: 44px;
+  }
+  .langkah-meta span {
+    font-size: 11px;
+    color: #57606a;
+  }
+  .langkah-meta span strong { color: #1a2e3b; }
+  .checklist {
+    border-top: 1px solid #f3f4f6;
+    padding: 10px 16px 12px;
+    margin-left: 0;
+  }
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 3px 0;
+    font-size: 12.5px;
+    color: #374151;
+  }
+  .checklist-item .box {
+    width: 14px; height: 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    background: #fff;
+  }
+
+  /* RESOURCES */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .resource-item {
+    background: #f7f8fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .resource-item .res-label {
+    font-weight: 700;
+    color: #1a2e3b;
+    margin-bottom: 2px;
+  }
+  .resource-item .res-link {
+    color: #3b82d4;
+    font-size: 11px;
+    text-decoration: none;
+  }
+  .resource-item .res-link:hover { text-decoration: underline; }
+
+  /* SKILL GAP */
+  .gap-row {
+    display: flex;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #f3f4f6;
+    gap: 10px;
+  }
+  .gap-row:last-child { border-bottom: none; }
+  .gap-skill { font-size: 12.5px; color: #1a2e3b; flex: 1; }
+  .gap-bar-wrap { width: 80px; }
+  .gap-bar { height: 6px; background: #e5e7eb; border-radius: 99px; overflow: hidden; }
+  .gap-fill { height: 100%; border-radius: 99px; }
+  .gap-val { font-size: 11px; color: #57606a; width: 50px; text-align: right; }
+  .status-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .s-tingkat { background: #fef3c7; color: #92400e; }
+  .s-dasar { background: #fee2e2; color: #b91c1c; }
+  .s-cukup { background: #d1fae5; color: #065f46; }
+  .s-unknown { background: #f3f4f6; color: #57606a; }
+
+  /* MOTIVATIONAL FOOTER */
+  .moti-box {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2a5298 100%);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 28px;
+    text-align: center;
+    color: #fff;
+  }
+  .moti-box h3 { font-size: 18px; margin-bottom: 8px; color: #c9a84c; }
+  .moti-box p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+
+  /* FOOTER */
+  .site-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #57606a;
+  }
+
+  @media (max-width: 540px) {
+    .profile-grid { grid-template-columns: 1fr; }
+    .timeline-overview { grid-template-columns: 1fr 1fr; }
+    .resource-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  
+  <div class="header">
+    <div class="header-badge">🎓 Graduation Day — GrowMate Roadmap</div>
+    <h1>Roadmap Skripsi Menuju Toga</h1>
+    <p class="subtitle">Pengembangan E-LKM Sistem Imun Berbasis Inkuiri Terbimbing untuk Meningkatkan Literasi Sains Murid</p>
+    <div class="header-meta">
+      <span class="meta-chip">📚 S1 Pendidikan Biologi</span>
+      <span class="meta-chip">🔬 R&amp;D</span>
+      <span class="meta-chip">📅 Mulai: 25 Sep 2026</span>
+      <span class="meta-chip">🏁 Sidang: 30 Nov 2026</span>
+      <span class="meta-chip">⏰ 5 jam/hari</span>
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-title">👤 Profil Peneliti</div>
+    <div class="profile-grid">
+      <div class="profile-item">
+        <span class="profile-label">Program Studi</span>
+        <span class="profile-value">S1 Pendidikan Biologi</span>
+      </div>
+      <div class="profile-item">
+        <span class="profile-label">Jenis Penelitian</span>
+        <span class="profile-value">R&amp;D (Research &amp; Development)</span>
+      </div>
+      <div class="profile-item">
+        <span class="profile-label">Pengalaman Magang</span>
+        <span class="profile-value">SMAN 31 Jakarta &amp; BRBIH Depok</span>
+      </div>
+      <div class="profile-item">
+        <span class="profile-label">Progress Saat Ini</span>
+        <span class="profile-value">BAB 1–3 diserahkan, menunggu revisi</span>
+      </div>
+    </div>
+    <div class="cri-bar-wrap">
+      <div class="cri-label">
+        <span style="font-weight:700;font-size:12px">📊 Thesis Completion Readiness Indicator (TCRI)</span>
+        <span style="font-weight:800;color:#1a3a5c">37.5%</span>
+      </div>
+      <div class="cri-bar"><div class="cri-fill"></div></div>
+      <p class="cri-note">⚠️ Fondasi sudah ada — dengan roadmap terstruktur &amp; disiplin 5 jam/hari, target sidang November sangat bisa dicapai.</p>
+    </div>
+  </div>
+
+  
+  <div class="card-title" style="margin-bottom:10px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#57606a">🗓️ Overview 6 Fase — 25 Sep s/d 30 Nov 2026</div>
+  <div class="timeline-overview">
+    <div class="fase-chip f1">
+      <div class="fase-num">Fase 1</div>
+      <div class="fase-date">25 Sep – 4 Okt</div>
+      <div class="fase-desc">Revisi BAB 1–3 + Kembangkan E-LKM</div>
+    </div>
+    <div class="fase-chip f2">
+      <div class="fase-num">Fase 2</div>
+      <div class="fase-date">5 Okt – 18 Okt</div>
+      <div class="fase-desc">Validasi Ahli + Revisi Produk</div>
+    </div>
+    <div class="fase-chip f3">
+      <div class="fase-num">Fase 3</div>
+      <div class="fase-date">19 Okt – 1 Nov</div>
+      <div class="fase-desc">Uji Coba + Analisis Data</div>
+    </div>
+    <div class="fase-chip f4">
+      <div class="fase-num">Fase 4</div>
+      <div class="fase-date">2 Nov – 16 Nov</div>
+      <div class="fase-desc">Tulis BAB 4 &amp; BAB 5</div>
+    </div>
+    <div class="fase-chip f5">
+      <div class="fase-num">Fase 5</div>
+      <div class="fase-date">17 Nov – 25 Nov</div>
+      <div class="fase-desc">Kelengkapan + ACC Pembimbing</div>
+    </div>
+    <div class="fase-chip f6">
+      <div class="fase-num">Fase 6</div>
+      <div class="fase-date">26 Nov – 30 Nov</div>
+      <div class="fase-desc">Persiapan &amp; Sidang Akhir 🎓</div>
+    </div>
+  </div>
+
+  
+  <div class="section-heading">
+    <div class="dot" style="background:#3b82d4"></div>
+    <h2>FASE 1 — Revisi BAB 1–3 &amp; Pengembangan E-LKM</h2>
+    <span class="period">25 Sep – 4 Okt 2026</span>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-01</span>
+      <span class="langkah-title">Revisi BAB 1–3</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 27 Sep 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 15 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Terima &amp; baca catatan revisi dosen pembimbing</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Buat daftar poin revisi BAB 1, 2, dan 3</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kerjakan revisi BAB 1</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kerjakan revisi BAB 2</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kerjakan revisi BAB 3</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kirim kembali ke dosen untuk pengecekan</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-02</span>
+      <span class="langkah-title">Desain &amp; Struktur E-LKM <span style="font-size:11px;font-weight:400;color:#57606a">(paralel)</span></span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 28 Sep 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 10 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Pilih &amp; tetapkan platform E-LKM (Canva / Flip / BookCreator / Google Sites)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Buat outline/kerangka isi E-LKM (cover, petunjuk, KD, kegiatan inkuiri, soal, daftar pustaka)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tentukan materi sistem imun yang akan dimuat</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Sketsa/wireframe tampilan E-LKM</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-03</span>
+      <span class="langkah-title">Produksi E-LKM (Draft Lengkap)</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 4 Okt 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 30 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Buat halaman cover &amp; identitas E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis petunjuk penggunaan E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kegiatan inkuiri tahap 1: Orientasi Masalah</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kegiatan inkuiri tahap 2: Merumuskan Masalah &amp; Hipotesis</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kegiatan inkuiri tahap 3: Pengumpulan Data/Informasi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kegiatan inkuiri tahap 4: Analisis &amp; Interpretasi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kegiatan inkuiri tahap 5: Kesimpulan</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tambahkan latihan soal literasi sains</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Lengkapi daftar pustaka E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Review draft secara keseluruhan</span></div>
+    </div>
+  </div>
+
+  
+  <div class="section-heading">
+    <div class="dot" style="background:#f59e0b"></div>
+    <h2>FASE 2 — Validasi Ahli &amp; Revisi Produk</h2>
+    <span class="period">5 Okt – 18 Okt 2026</span>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-04</span>
+      <span class="langkah-title">Penyusunan Instrumen Validasi</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 6 Okt 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 10 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Cari &amp; kumpulkan referensi instrumen validasi E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Susun lembar validasi ahli materi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Susun lembar validasi ahli media</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Susun angket respons siswa/guru (untuk uji coba)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Konsultasikan instrumen ke dosen pembimbing</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-05</span>
+      <span class="langkah-title">Validasi Ahli Materi &amp; Media</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 13 Okt 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 7 hari</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Identifikasi &amp; hubungi calon validator ahli materi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Identifikasi &amp; hubungi calon validator ahli media</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kirim produk E-LKM + lembar validasi ke validator</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Follow up validator (H+3 jika belum ada respons)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Terima hasil lembar validasi yang sudah diisi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Rekap skor &amp; catatan masukan validator</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-06</span>
+      <span class="langkah-title">Revisi Produk Pasca Validasi</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 18 Okt 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 25 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Buat tabel rekapitulasi saran validator &amp; tindak lanjut</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Revisi konten materi E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Revisi desain &amp; tampilan E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Finalisasi E-LKM versi revisi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Dokumentasi before-after revisi (untuk lampiran BAB 4)</span></div>
+    </div>
+  </div>
+
+  
+  <div class="section-heading">
+    <div class="dot" style="background:#eab308"></div>
+    <h2>FASE 3 — Uji Coba Terbatas &amp; Analisis Data</h2>
+    <span class="period">19 Okt – 1 Nov 2026</span>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-07</span>
+      <span class="langkah-title">Uji Coba Terbatas</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 25 Okt 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 7 hari</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Hubungi sekolah/guru mitra untuk uji coba</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Siapkan E-LKM final versi uji coba</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Siapkan angket respons siswa/guru</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Pelaksanaan uji coba terbatas (5–15 siswa atau guru)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Distribusi &amp; pengumpulan angket</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Dokumentasi pelaksanaan (foto/screenshot untuk lampiran)</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-08</span>
+      <span class="langkah-title">Analisis Data (CVR/CVI &amp; Respons)</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 1 Nov 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 35 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Input semua data validasi ke spreadsheet</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Hitung CVR per item &amp; CVI keseluruhan (validasi materi)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Hitung CVR/CVI validasi media</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Hitung persentase skor respons uji coba</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Interpretasi semua hasil analisis</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Buat tabel rekapitulasi hasil analisis</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Buat grafik/diagram untuk visualisasi data</span></div>
+    </div>
+  </div>
+
+  
+  <div class="section-heading">
+    <div class="dot" style="background:#22c55e"></div>
+    <h2>FASE 4 — Penulisan BAB 4 &amp; BAB 5</h2>
+    <span class="period">2 Nov – 16 Nov 2026</span>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-09</span>
+      <span class="langkah-title">Penulisan BAB 4 (Hasil &amp; Pembahasan)</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 11 Nov 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 50 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Tulis subbab: Deskripsi Pengembangan E-LKM</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis subbab: Hasil Validasi Ahli Materi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis subbab: Hasil Validasi Ahli Media</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis subbab: Revisi Produk (tabel saran &amp; tindak lanjut)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis subbab: Hasil Uji Coba Terbatas</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis subbab: Pembahasan (kaitkan dengan teori &amp; penelitian relevan)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Cek konsistensi data BAB 4 dengan lampiran</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-10</span>
+      <span class="langkah-title">Penulisan BAB 5 (Kesimpulan &amp; Saran)</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 16 Nov 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 25 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Tulis kesimpulan (menjawab rumusan masalah)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis saran praktis</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis saran teoretis/penelitian lanjutan</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Cek kesesuaian kesimpulan dengan tujuan BAB 1</span></div>
+    </div>
+  </div>
+
+  
+  <div class="section-heading">
+    <div class="dot" style="background:#8b5cf6"></div>
+    <h2>FASE 5 — Kelengkapan Skripsi &amp; ACC Pembimbing</h2>
+    <span class="period">17 Nov – 25 Nov 2026</span>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-11</span>
+      <span class="langkah-title">Kelengkapan Dokumen Skripsi</span>
+      <span class="badge-priority badge-medium">MEDIUM</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 20 Nov 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 20 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Tulis abstrak Bahasa Indonesia</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Tulis abstrak Bahasa Inggris</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Lengkapi &amp; format daftar pustaka (APA/sesuai panduan kampus)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Susun lampiran (instrumen, lembar validasi, angket, dokumentasi, surat)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Cek format keseluruhan (margin, spasi, font, penomoran halaman)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Cek konsistensi seluruh BAB (1–5)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Cek plagiasi (Turnitin/tools lainnya)</span></div>
+    </div>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-12</span>
+      <span class="langkah-title">Revisi Akhir &amp; ACC Dosen Pembimbing</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 25 Nov 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 5 hari</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Kirim draft skripsi lengkap ke dosen pembimbing</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kerjakan revisi akhir dari dosen</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Dapatkan ACC/persetujuan dosen pembimbing</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Daftar sidang skripsi ke fakultas/jurusan</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Siapkan berkas administrasi pendaftaran sidang</span></div>
+    </div>
+  </div>
+
+  
+  <div class="section-heading">
+    <div class="dot" style="background:#c9a84c"></div>
+    <h2>FASE 6 — Persiapan &amp; Sidang Akhir</h2>
+    <span class="period">26 Nov – 30 Nov 2026</span>
+  </div>
+
+  <div class="langkah">
+    <div class="langkah-header">
+      <span class="langkah-num">L-13</span>
+      <span class="langkah-title">Persiapan Presentasi Sidang</span>
+      <span class="badge-priority badge-medium">MEDIUM</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 28 Nov 2026</span>
+      <span>⏱ <strong>Estimasi:</strong> 15 jam</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>Buat slide presentasi (latar belakang, tujuan, metode, produk, hasil, kesimpulan)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Latihan presentasi (max 15 menit)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Simulasi tanya jawab dengan teman/keluarga</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Pelajari poin-poin krusial yang mungkin ditanyakan penguji</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Siapkan penampilan &amp; perlengkapan hari sidang</span></div>
+    </div>
+  </div>
+
+  <div class="langkah" style="border:2px solid #c9a84c">
+    <div class="langkah-header" style="background:#fffbeb">
+      <span class="langkah-num finish">L-14</span>
+      <span class="langkah-title" style="color:#92400e">🏁 SIDANG AKHIR SKRIPSI — GARIS FINISH!</span>
+      <span class="badge-priority badge-high">HIGH</span>
+    </div>
+    <div class="langkah-meta">
+      <span>📅 <strong>Deadline:</strong> 30 Nov 2026</span>
+      <span style="color:#c9a84c;font-weight:700">⭐ MILESTONE UTAMA</span>
+    </div>
+    <div class="checklist">
+      <div class="checklist-item"><div class="box"></div><span>🎓 Pelaksanaan sidang akhir skripsi</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kerjakan revisi pasca sidang (jika diminta)</span></div>
+      <div class="checklist-item"><div class="box"></div><span>Kumpulkan skripsi final yang sudah dijilid</span></div>
+      <div class="checklist-item"><div class="box"></div><span>🎓 LULUS &amp; menuju WISUDA!</span></div>
+    </div>
+  </div>
+
+  
+  <div class="card" style="margin-top:28px">
+    <div class="card-title">📊 Skill Gap Summary</div>
+    <div class="gap-row">
+      <span class="gap-skill">Penulisan ilmiah akademik</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:50%;background:#f59e0b"></div></div></div>
+      <span class="gap-val">50%</span>
+      <span class="status-badge s-tingkat">Perlu Ditingkatkan</span>
+    </div>
+    <div class="gap-row">
+      <span class="gap-skill">Desain &amp; pengembangan E-LKM</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:25%;background:#ef4444"></div></div></div>
+      <span class="gap-val">25%</span>
+      <span class="status-badge s-dasar">Masih Dasar</span>
+    </div>
+    <div class="gap-row">
+      <span class="gap-skill">Penyusunan instrumen validasi</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:25%;background:#ef4444"></div></div></div>
+      <span class="gap-val">25%</span>
+      <span class="status-badge s-dasar">Masih Dasar</span>
+    </div>
+    <div class="gap-row">
+      <span class="gap-skill">Analisis data (CVR/CVI)</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:5%;background:#d1d5db"></div></div></div>
+      <span class="gap-val">—</span>
+      <span class="status-badge s-unknown">Belum Dapat Dinilai</span>
+    </div>
+    <div class="gap-row">
+      <span class="gap-skill">Manajemen waktu &amp; deadline</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:50%;background:#f59e0b"></div></div></div>
+      <span class="gap-val">50%</span>
+      <span class="status-badge s-tingkat">Perlu Ditingkatkan</span>
+    </div>
+    <div class="gap-row">
+      <span class="gap-skill">Komunikasi akademik</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:75%;background:#22c55e"></div></div></div>
+      <span class="gap-val">75%</span>
+      <span class="status-badge s-cukup">Cukup</span>
+    </div>
+    <div class="gap-row">
+      <span class="gap-skill">Presentasi sidang</span>
+      <div class="gap-bar-wrap"><div class="gap-bar"><div class="gap-fill" style="width:75%;background:#22c55e"></div></div></div>
+      <span class="gap-val">75%</span>
+      <span class="status-badge s-cukup">Cukup</span>
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-title">📚 Learning Resources</div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="res-label">Template E-LKM</div>
+        <a class="res-link" href="https://www.canva.com">Canva — Worksheet/E-Module</a>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Panduan CVR/CVI</div>
+        <a class="res-link" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6395600/">Lawshe (1975) + Wilson et al.</a>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Manajemen Referensi</div>
+        <a class="res-link" href="https://www.zotero.org">Zotero (zotero.org)</a>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Literasi Sains</div>
+        <a class="res-link" href="https://www.oecd.org/pisa/">PISA Framework 2022</a>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Slide Sidang</div>
+        <a class="res-link" href="https://www.canva.com/presentations/templates/academic/">Canva Academic Template</a>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Panduan R&amp;D</div>
+        <div style="font-size:11px;color:#57606a">Sugiyono (2019) Metode Penelitian &amp; Pengembangan</div>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Inkuiri Terbimbing</div>
+        <div style="font-size:11px;color:#57606a">Wenning (2011) Levels of Inquiry</div>
+      </div>
+      <div class="resource-item">
+        <div class="res-label">Analisis Data</div>
+        <div style="font-size:11px;color:#57606a">Microsoft Excel / Google Sheets</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="moti-box">
+    <h3>🎓 Semangat Menuju Toga!</h3>
+    <p>Kamu sudah punya peta jalan yang jelas — 14 langkah dari hari ini sampai panggung wisuda.<br />
+    Setiap checklist yang kamu selesaikan adalah satu langkah lebih dekat ke toga itu.<br />
+    <strong style="color:#c9a84c">Mulai hari ini, 25 September 2026. You got this! 💪</strong></p>
+  </div>
+
+  <div class="site-footer">Made with IBM Bob</div>
+</div>
+</body>
+</html>
