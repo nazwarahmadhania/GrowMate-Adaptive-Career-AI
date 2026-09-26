@@ -1,4 +1,4 @@
-﻿# 🌱 GrowMate — Adaptive Career AI
+# 🌱 GrowMate — Adaptive Career AI
 
 ### From Career Uncertainty to a Clear Learning Roadmap
 
@@ -642,7 +642,7 @@ GrowMate-Adaptive-Career-AI/
 ├── GrowMate – Adaptive Career AI.json
 │   └── Main Langflow workflow export
 │
-├── ibm-bob-mcp-config.json
+├── mcp.json
 │   └── IBM Bob MCP configuration
 │
 └── README.md
@@ -695,7 +695,7 @@ The current workflow contains Google Generative AI model configuration.
 Use:
 
 ```text
-ibm-bob-mcp-config.json
+mcp.json
 ```
 
 to configure the required MCP connection between IBM Bob and the GrowMate workflow.
@@ -751,6 +751,7 @@ Screenshots demonstrate the working prototype and key components of GrowMate.
 ```text
 GrowMate uses Langflow as a workflow and processing engine that connects IBM Bob with supporting tools and services, such as Web Search, Notion, and Google Calendar. This workflow processes user input and generates responses through the Agent in an integrated manner.
 ```
+
 ![Langflow Workflow](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/9e8ba2935b567ca6e9e8e34d689a8a76768dd8c7/Screenshot%202026-09-25%20142223.png)
 
 ### IBM Bob Interface
@@ -758,6 +759,7 @@ GrowMate uses Langflow as a workflow and processing engine that connects IBM Bob
 ```text
 IBM Bob serves as GrowMate’s main interface, where users interact with the agent throughout the roadmap generation process, from providing their profile to receiving a personalized learning roadmap.
 ```
+
 ![IBM Bob Interface](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/efa8a9e52edd3cd1cf33221a896b2395530c3077/Screenshot%202026-09-26%20044013.png)
 
 ![Personalized Learning Roadmap](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/b6a38d5de6746044d79f584b5f0dd8d9f5f328e1/Screenshot%202026-09-26%20040026.png)
@@ -767,14 +769,15 @@ IBM Bob serves as GrowMate’s main interface, where users interact with the age
 ```text
 GrowMate monitors learning progress by tracking completed tasks, current sessions, and the next learning focus.
 ```
-![Progress Monitoring](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/60af542dee1b5bfe6bcbb00d2184ea431f654f5d/Screenshot%202026-09-26%20040644.png)
 
+![Progress Monitoring](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/60af542dee1b5bfe6bcbb00d2184ea431f654f5d/Screenshot%202026-09-26%20040644.png)
 
 ### Adaptive Replanning
 
 ```text
 GrowMate dynamically updates the learning roadmap when users’ skills, priorities, or learning capacity change.
 ```
+
 ![Adaptive Replanning](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/29a04f07b354cfb642139f5676eab32ea28ef9f4/Screenshot%202026-09-26%20043456.png)
 
 ### Notion Integration
@@ -782,6 +785,7 @@ GrowMate dynamically updates the learning roadmap when users’ skills, prioriti
 ```text
 GrowMate can store and manage the personalized learning roadmap in Notion, allowing users to access and organize their learning plan in one place.
 ```
+
 ![Notion Integration](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/0b89ef39023f004bc3714406314731955cf22b2a/Screenshot%202026-09-26%20045520.png)
 
 ### Google Calendar Integration
@@ -789,14 +793,32 @@ GrowMate can store and manage the personalized learning roadmap in Notion, allow
 ```text
 GrowMate can turn learning sessions from the roadmap into scheduled Google Calendar events, including learning tasks and resources.
 ```
+
 ![Google Calendar Integration](https://github.com/nazwarahmadhania/GrowMate-Adaptive-Career-AI/blob/6e385c97b6f7dcfcc3d5842a35c98f6a54d441ff/Screenshot%202026-09-26%20045938.png)
 
 ### Roadmap Report
+
 ```text
 GrowMate can generate the personalized learning roadmap as an HTML report for a structured and readable overview.
 ```
-[View Roadmap Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/
-)
+
+[View Roadmap Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/Roadmap%20Report.html)
+
+---
+
+# 🧪 User Testing
+
+GrowMate was tested with users using different career goals and learning profiles.
+
+The testing was conducted to observe how GrowMate generates personalized learning roadmaps based on user-provided profiles, career targets, existing skills, learning capacity, and learning timelines.
+
+### User Testing Report
+
+[View User Testing Report](https://nazwarahmadhania.github.io/GrowMate-Adaptive-Career-AI/user-testing-report.html)
+
+The user testing results are presented as initial prototype testing and are not intended to represent large-scale validation of the system.
+
+---
 
 # ⚠️ Current Limitations
 
